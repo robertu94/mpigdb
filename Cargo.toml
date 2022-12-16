@@ -1,0 +1,15 @@
+[package]
+name = "mpigdb"
+version = "0.1.0"
+edition = "2021"
+description = "A wrapper arround mpiexec, gdbserver, and gdb that makes debugging MPI programs eaiser"
+authors = ["Robert Underwood <rr.underwood94@gmail.com>"]
+repository = "https://github.com/robertu94/mpigdb"
+license =  "BSD-2-Clause"
+keywords = ["debugging", "parallel", "mpi"]
+categories = ["command-line-utilities", "development-tools::debugging"]
+exclude = ["docs/*"]
+
+[dependencies]
+anyhow = "1.0.66"
+num_cpus = "1.14.0"
