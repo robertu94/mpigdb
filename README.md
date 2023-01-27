@@ -1,6 +1,6 @@
 # MPIGDB
 
-A wrapper arround mpiexec, gdbserver, and gdb that makes debugging MPI programs eaiser with a moderate number of processes.
+A wrapper around mpiexec, gdbserver, and gdb that makes debugging MPI programs easier with a moderate number of processes.
 
 ## Example Usage
 
@@ -34,7 +34,7 @@ You also should probably know about the following buildin commands
 
 Dependencies:
 
-+ `gdb` 12.1 or later with `gdbserver` which is sometimes packaged seperately and python support which may be disabled if compiled from source
++ `gdb` 12.1 or later with `gdbserver` which is sometimes packaged separately and python support which may be disabled if compiled from source
 + a MPI installation including mpiexec `mpiexec`
 + python 3.8 or later
 + Rust+Cargo 1.65 or later
@@ -43,8 +43,4 @@ Earlier versions may work, but are not tested
 
 ## Limitations and Known Bugs
 
-`gdbserver` supports running the debugger and `gdb` on seperate nodes, but this command currently does not (PRs welcome).
-
 For HPC systems with meaningful scale, we should probably integrate with PMIx, but we currently do onot.
-
-Sometimes the program failes to successfully launch and connect to the server.  This is often resolved by restarting.

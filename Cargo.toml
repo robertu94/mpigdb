@@ -1,6 +1,6 @@
 [package]
 name = "mpigdb"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 description = "A wrapper arround mpiexec, gdbserver, and gdb that makes debugging MPI programs eaiser"
 authors = ["Robert Underwood <rr.underwood94@gmail.com>"]
@@ -12,4 +12,5 @@ exclude = ["docs/*"]
 
 [dependencies]
 anyhow = "1.0.66"
+hostname = "0.3.1"
 num_cpus = "1.14.0"
