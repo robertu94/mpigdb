@@ -1,0 +1,52 @@
+direction: right
+shape: sequence_diagram
+user; mpigdb; gdb; mpiexec; mpigdb_helper; gdbserver; app
+
+user: {
+  shape: person
+  style.fill: "#FFF2CC"
+  style.stroke: "#D6B656"
+}
+app: {
+  style.multiple: true
+  style.fill: "#FFF2CC"
+  style.stroke: "#D6B656"
+}
+mpigdb: {
+  style.fill: "#D5E8D4"
+  style.stroke: "#82B366"
+}
+mpigdb_helper: {
+  style.multiple: true
+  style.fill: "#D5E8D4"
+  style.stroke: "#82B366"
+}
+mpiexec: {
+  style.fill: "#DAE8FC"
+  style.stroke: "#6C8EBF"
+}
+gdb: {
+  style.fill: "#DAE8FC"
+  style.stroke: "#6C8EBF"
+}
+gdbserver: {
+  style.multiple: true
+  style.fill: "#DAE8FC"
+  style.stroke: "#6C8EBF"
+}
+
+user.a -> mpigdb.a: "invokes"
+mpigdb.a -> mpigdb.a: "rewrites command to insert mpigdb_helper"
+mpigdb.a -> mpiexec.a: "fork+exec"
+mpiexec.a -> mpigdb_helper.a: "MPI_Comm_spawn"
+mpigdb_helper.a -> mpigdb.a: "registers client";
+mpigdb_helper.a -> gdbserver.a: "exec"
+gdbserver -> gdbserver.a: "listen"
+mpigdb.a -> mpigdb.a:  "wait for all clients"
+mpigdb.a -> mpigdb.a: "write startup file"
+mpigdb.a -> gdb.a: "exec"
+gdb.a -> gdbserver.a: "connect"
+gdbserver.a -> app.a: "fork+exec"
+user.a -> gdb.a: "interact"
+gdb.a -> gdbserver.a: "interact"
+gdbserver.a -> app.a: "interact"

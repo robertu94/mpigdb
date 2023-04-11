@@ -1,0 +1,14 @@
+# This is a Spack Environment file.
+#
+# It describes a set of packages to be installed, along with
+# configuration settings.
+spack:
+  # add package specs to the `specs` list
+  specs: [mpigdb, mdspan, mpi, cmake, py-m]
+  view: true
+  concretizer:
+    unify: true
+  develop:
+    mpigdb:
+      path: .
+      spec: mpigdb@git.main

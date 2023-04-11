@@ -4,6 +4,9 @@
 
 void foo(std::vector<int> rank) {
     std::cout << "hi " << rank.front() << std::endl;
+    if(rank.at(0)) {
+        throw std::runtime_error("test");
+    }
 }
 
 int main(int argc, char *argv[])

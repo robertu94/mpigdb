@@ -6,17 +6,22 @@ pub fn main() -> Result<(), anyhow::Error> {
     let host = hostname::get()?.into_string().unwrap();
     let control_addr = &std::env::args().nth(1).unwrap();
     let port = &std::env::args().nth(2).unwrap();
-    let child_args: Vec<String> = std::env::args().skip(3).collect();
+    let verbose = std::env::args().nth(3).unwrap() == "1";
+    let child_args: Vec<String> = std::env::args().skip(4).collect();
 
     //send back the connection string
     {
-        println!("connecting {}", control_addr);
+        if verbose {
+            eprintln!("connecting {}", control_addr);
+        }
         let mut control = std::net::TcpStream::connect(control_addr)?;
         control.write_all(format!("{host}:{port}\n").as_ref())?;
         control.shutdown(std::net::Shutdown::Both)?
     }
 
-    println!("child {:?}", child_args);
+    if verbose {
+        eprintln!("child {:?}", child_args);
+    }
     Command::new("gdbserver")
         .arg("--once")
         .arg(format!("{host}:{port}"))

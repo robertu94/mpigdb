@@ -9,9 +9,11 @@ struct CLIArgs {
     base_port: usize,
     global_mpi_args: Vec<String>,
     mpi_args: Vec<Vec<String>>,
+    dbg_args: Vec<String>,
     prg_args: Vec<Vec<String>>,
     helper: String,
     dry_run: bool,
+    verbose: bool,
 }
 
 fn write_startup_file(hostports: &[String]) -> anyhow::Result<()> {
@@ -71,6 +73,7 @@ enum CliState {
     PortFlag,
     HelperFlag,
     GlobalFlag,
+    DbgFlag,
 }
 
 fn parse_args() -> anyhow::Result<CLIArgs> {
@@ -83,11 +86,26 @@ fn parse_args() -> anyhow::Result<CLIArgs> {
     let mut mpi_args: Vec<Vec<String>> = vec![Vec::new()];
     let mut prg_args: Vec<Vec<String>> = vec![Vec::new()];
     let mut global_args = Vec::new();
+    let mut dbg_args = Vec::new();
+    let mut verbose = false;
 
     for arg in std::env::args().skip(1) {
         state = match &state {
             CliState::MpiFlags => match &*arg {
                 "-n" | "-np" => CliState::ProcsFlag,
+                "--mpigdb_verbose"  => {
+                    verbose = true;
+                    CliState::MpiFlags
+                }
+                "--interpreter=mi"  => {
+                    dbg_args.push("--interpreter=mi".to_string());
+                    CliState::MpiFlags
+                }
+                s if s.starts_with("--tty=")  => {
+                    dbg_args.push(arg);
+                    CliState::MpiFlags
+                }
+                "--mpigdb_dbg_arg" => CliState::DbgFlag,
                 "--mpigdb_helper" => CliState::HelperFlag,
                 "--mpigdb_port" => CliState::PortFlag,
                 "--mpigdb_mpi_flag" => CliState::GlobalFlag,
@@ -131,6 +149,10 @@ fn parse_args() -> anyhow::Result<CLIArgs> {
                 global_args.push(arg);
                 CliState::MpiFlags
             }
+            CliState::DbgFlag => {
+                dbg_args.push(arg);
+                CliState::MpiFlags
+            }
         }
     }
 
@@ -138,23 +160,29 @@ fn parse_args() -> anyhow::Result<CLIArgs> {
         procs,
         base_port,
         mpi_args,
+        dbg_args,
         prg_args,
         helper,
         dry_run,
+        verbose,
         global_mpi_args: global_args,
     })
 }
 
 fn main() -> anyhow::Result<()> {
     let args = parse_args()?;
-    println!("{args:?}");
+    if args.verbose {
+        eprintln!("{args:?}");
+    }
 
     let total_procs = args.procs.iter().sum();
     let mut mpiexec_args: Vec<String> = Vec::new();
     let control_host = hostname::get()?.into_string().unwrap();
     let base_port = args.base_port;
     let control_port = format!("{control_host}:{base_port}");
-    println!("listening {control_port}");
+    if args.verbose {
+        eprintln!("listening {control_port}");
+    }
 
     mpiexec_args.extend(args.global_mpi_args);
     let mut i = 0;
@@ -164,6 +192,7 @@ fn main() -> anyhow::Result<()> {
             mpiexec_args.push(args.helper.clone());
             mpiexec_args.push(control_port.clone());
             mpiexec_args.push((args.base_port + i + 1).to_string());
+            mpiexec_args.push((if args.verbose  {"1"} else {"0"}).to_string());
             mpiexec_args.extend(args.prg_args[group].clone());
             if i < total_procs - 1 {
                 mpiexec_args.push(":".to_string())
@@ -171,7 +200,9 @@ fn main() -> anyhow::Result<()> {
             i += 1;
         }
     }
-    println!("{mpiexec_args:?}");
+    if args.verbose {
+        eprintln!("{mpiexec_args:?}");
+    }
 
     if !args.dry_run {
         let (controllistening_send, controllistening_recv) = channel();
@@ -209,6 +240,7 @@ fn main() -> anyhow::Result<()> {
         Command::new("gdb")
             .arg("-x")
             .arg(".startup.gdb")
+            .args(args.dbg_args)
             .stdin(Stdio::inherit())
             .stdout(Stdio::inherit())
             .stderr(Stdio::inherit())

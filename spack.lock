@@ -1,0 +1,5558 @@
+{
+  "_meta": {
+    "file-type": "spack-lockfile",
+    "lockfile-version": 4,
+    "specfile-version": 3
+  },
+  "roots": [
+    {
+      "hash": "nzojcrxtsafg2ifmlcqcctysluskjo63",
+      "spec": "mpigdb"
+    },
+    {
+      "hash": "r5z3wb2z6hklikvq3kfvmq5keyjaw4du",
+      "spec": "mdspan"
+    },
+    {
+      "hash": "3uebtou3anlgm3fhdoo7wwvwdsyulqne",
+      "spec": "mpi"
+    },
+    {
+      "hash": "4cbscskjc5toxzyyk5x4fozkp4gkszie",
+      "spec": "cmake"
+    },
+    {
+      "hash": "54bjaz76njchwa3dcdioraqtgjxfdvxj",
+      "spec": "py-m"
+    }
+  ],
+  "concrete_specs": {
+    "nzojcrxtsafg2ifmlcqcctysluskjo63": {
+      "name": "mpigdb",
+      "version": "git.main",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "robertu94",
+      "parameters": {
+        "build_system": "generic",
+        "dev_path": "/home/runderwood/git/play/mpigdb",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "hxzewtg52vd6mytylsx5uh2nzdy5vjv362zghlzpxdufxdqenjmq====",
+      "dependencies": [
+        {
+          "name": "gdb",
+          "hash": "xiwdwdmx3qfx7aofkujmyl7rwlf4s2lt",
+          "type": [
+            "run"
+          ]
+        },
+        {
+          "name": "mpich",
+          "hash": "3uebtou3anlgm3fhdoo7wwvwdsyulqne",
+          "type": [
+            "run"
+          ]
+        },
+        {
+          "name": "python",
+          "hash": "a4pqg3ynlv4lwnwo2y34vujgx22fa7ap",
+          "type": [
+            "run"
+          ]
+        },
+        {
+          "name": "rust",
+          "hash": "mruuv75h4c4liepsk4emfed43efqshei",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "nzojcrxtsafg2ifmlcqcctysluskjo63"
+    },
+    "xiwdwdmx3qfx7aofkujmyl7rwlf4s2lt": {
+      "name": "gdb",
+      "version": "13.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "debuginfod": true,
+        "gold": false,
+        "ld": false,
+        "lto": false,
+        "patches": [
+          "7590c95c3a621b731cf80f26fc480e9d2584770b8e2f689a22f6d23316fba899"
+        ],
+        "python": true,
+        "quad": false,
+        "source-highlight": false,
+        "tui": false,
+        "xz": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "7590c95c3a621b731cf80f26fc480e9d2584770b8e2f689a22f6d23316fba899"
+      ],
+      "package_hash": "nlidxu2kdb27i7ggnq2b466gzrlhfjhkhyxohilvhtm3zdvjnzda====",
+      "dependencies": [
+        {
+          "name": "elfutils",
+          "hash": "cgxg6if2ask52uvx3xfgrtgpsvw2zzea",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "gmp",
+          "hash": "vbb26frnbb5szdbupzmjraggfsm7h4c4",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "python",
+          "hash": "a4pqg3ynlv4lwnwo2y34vujgx22fa7ap",
+          "type": [
+            "build",
+            "link",
+            "run"
+          ]
+        },
+        {
+          "name": "texinfo",
+          "hash": "wt3idwn6voumnvbz6f7p2eg4gyh73dbg",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "xz",
+          "hash": "4ocedbiloeno7wnhhx455vfehnxi4bqx",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "xiwdwdmx3qfx7aofkujmyl7rwlf4s2lt"
+    },
+    "cgxg6if2ask52uvx3xfgrtgpsvw2zzea": {
+      "name": "elfutils",
+      "version": "0.188",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "bzip2": false,
+        "debuginfod": true,
+        "nls": true,
+        "xz": false,
+        "zstd": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "p2kqbn472xpyvzbla3kzzrnocf4477l4bkoksuomfbuwv4lvdiwa====",
+      "dependencies": [
+        {
+          "name": "curl",
+          "hash": "ymn7thvuwzfl6b2cxv2qvt5fvunhhyfm",
+          "type": [
+            "link"
+          ]
+        },
+        {
+          "name": "gettext",
+          "hash": "lox2eif6nmv2t3pv7elmqlf2yqv3tkke",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libarchive",
+          "hash": "5k4ozfyws5f2k6npy5k5cjbqkvfkpwig",
+          "type": [
+            "link"
+          ]
+        },
+        {
+          "name": "libmicrohttpd",
+          "hash": "wwkqhq53es4rlmwzxtsw6tyno3m7hlh4",
+          "type": [
+            "link"
+          ]
+        },
+        {
+          "name": "m4",
+          "hash": "ed3izh67tigal5goxynpkheljhti4ctm",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "sqlite",
+          "hash": "eomtb6dz5goakkfyhovllbmq2ffjvndd",
+          "type": [
+            "link"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "qpuezpedu37xahyewd5esz44gbb3kbzh",
+          "type": [
+            "link"
+          ]
+        }
+      ],
+      "hash": "cgxg6if2ask52uvx3xfgrtgpsvw2zzea"
+    },
+    "ymn7thvuwzfl6b2cxv2qvt5fvunhhyfm": {
+      "name": "curl",
+      "version": "7.82.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "gssapi": true,
+        "ldap": true,
+        "libidn2": false,
+        "librtmp": false,
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "libssh": false,
+        "libssh2": false,
+        "nghttp2": true,
+        "tls": [
+          "openssl"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "external": {
+        "path": "/usr",
+        "module": null,
+        "extra_attributes": {}
+      },
+      "package_hash": "6nklxlu655vug23rcsdhfsjckghxpq5eaxs3ib7hu4ci6pnuzwra====",
+      "hash": "ymn7thvuwzfl6b2cxv2qvt5fvunhhyfm"
+    },
+    "lox2eif6nmv2t3pv7elmqlf2yqv3tkke": {
+      "name": "gettext",
+      "version": "0.21.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "bzip2": true,
+        "curses": true,
+        "git": true,
+        "libunistring": false,
+        "libxml2": true,
+        "tar": true,
+        "xz": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "xu3qgc4x5mjlvzywiyh3aifltzurwmvjzqfq3gurzkffveeawp3q====",
+      "dependencies": [
+        {
+          "name": "bzip2",
+          "hash": "wu3ng5mptclcfvol55zrmsh66kvvxji5",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libiconv",
+          "hash": "phfk2dxvgcxu2d7gt7m5govpmxwyjknw",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libxml2",
+          "hash": "pzcfwjxmrunefnngq2xzapna4labe4qs",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "ncurses",
+          "hash": "n2pn2wyxxup67o7a567qequmg7pabkyo",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "tar",
+          "hash": "djc3sk24yoaobgzwlvfk5gx4fcf4qbrp",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "xz",
+          "hash": "4ocedbiloeno7wnhhx455vfehnxi4bqx",
+          "type": [
+            "build",
+            "link",
+            "run"
+          ]
+        }
+      ],
+      "hash": "lox2eif6nmv2t3pv7elmqlf2yqv3tkke"
+    },
+    "wu3ng5mptclcfvol55zrmsh66kvvxji5": {
+      "name": "bzip2",
+      "version": "1.0.8",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "debug": false,
+        "pic": false,
+        "shared": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "uzbfzh3bgm44pop46fdhw5gm7bqbprjrq7uqe2ulgqpjsm5q553q====",
+      "dependencies": [
+        {
+          "name": "diffutils",
+          "hash": "2njjgvmrbndwrbdoevsvl7jaubrmolge",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "wu3ng5mptclcfvol55zrmsh66kvvxji5"
+    },
+    "2njjgvmrbndwrbdoevsvl7jaubrmolge": {
+      "name": "diffutils",
+      "version": "3.8",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "external": {
+        "path": "/usr",
+        "module": null,
+        "extra_attributes": {}
+      },
+      "package_hash": "jv4gzc4vymljleyxlrnpauwx6pzt7kwz3ppu2cmw2ndcbxmupocq====",
+      "hash": "2njjgvmrbndwrbdoevsvl7jaubrmolge"
+    },
+    "phfk2dxvgcxu2d7gt7m5govpmxwyjknw": {
+      "name": "libiconv",
+      "version": "1.16",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "iwav2dx3w6bi363i3gqu3ndd2rajsle7ebgznblzarzb46iraw4q====",
+      "hash": "phfk2dxvgcxu2d7gt7m5govpmxwyjknw"
+    },
+    "pzcfwjxmrunefnngq2xzapna4labe4qs": {
+      "name": "libxml2",
+      "version": "2.10.3",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "python": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "ea3hepsqvb2bb5ttapra6kayyi3c54pwpr35zfejewbo4z36m6yq====",
+      "dependencies": [
+        {
+          "name": "libiconv",
+          "hash": "phfk2dxvgcxu2d7gt7m5govpmxwyjknw",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "pkgconf",
+          "hash": "qcja2noiprmroskqkc5z2ddaoh5pzlie",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "xz",
+          "hash": "4ocedbiloeno7wnhhx455vfehnxi4bqx",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "qpuezpedu37xahyewd5esz44gbb3kbzh",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "pzcfwjxmrunefnngq2xzapna4labe4qs"
+    },
+    "qcja2noiprmroskqkc5z2ddaoh5pzlie": {
+      "name": "pkgconf",
+      "version": "1.8.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "external": {
+        "path": "/usr",
+        "module": null,
+        "extra_attributes": {}
+      },
+      "package_hash": "olr5zscvqru56pgiiqlnzc4ud5e7iuyntj6fsplcrjh3jngqjpja====",
+      "hash": "qcja2noiprmroskqkc5z2ddaoh5pzlie"
+    },
+    "4ocedbiloeno7wnhhx455vfehnxi4bqx": {
+      "name": "xz",
+      "version": "5.2.7",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "pic": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "vrji74lnhfhztgaztloko6l73x5hoarnlatandfmr6qi4qsboqtq====",
+      "hash": "4ocedbiloeno7wnhhx455vfehnxi4bqx"
+    },
+    "qpuezpedu37xahyewd5esz44gbb3kbzh": {
+      "name": "zlib",
+      "version": "1.2.13",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "makefile",
+        "optimize": true,
+        "pic": true,
+        "shared": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "ddqbey6mlcu554x3lwuh2gtvagc5shwtyyyhg6fwcwfoefimz5oa====",
+      "hash": "qpuezpedu37xahyewd5esz44gbb3kbzh"
+    },
+    "n2pn2wyxxup67o7a567qequmg7pabkyo": {
+      "name": "ncurses",
+      "version": "6.3",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "abi": "none",
+        "build_system": "autotools",
+        "symlinks": false,
+        "termlib": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "xt4gmttjogkqm2ol74rux4rjqnilsdqxyjjgjrfgkwroyr5eignq====",
+      "dependencies": [
+        {
+          "name": "pkgconf",
+          "hash": "qcja2noiprmroskqkc5z2ddaoh5pzlie",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "n2pn2wyxxup67o7a567qequmg7pabkyo"
+    },
+    "djc3sk24yoaobgzwlvfk5gx4fcf4qbrp": {
+      "name": "tar",
+      "version": "1.34",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "zip": "pigz",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "external": {
+        "path": "/usr",
+        "module": null,
+        "extra_attributes": {}
+      },
+      "package_hash": "uroxlrgy5nrgbemzhcechjroxo7ycyniyi2geepv66v2hi2mn53q====",
+      "hash": "djc3sk24yoaobgzwlvfk5gx4fcf4qbrp"
+    },
+    "5k4ozfyws5f2k6npy5k5cjbqkvfkpwig": {
+      "name": "libarchive",
+      "version": "3.5.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "compression": [
+          "bz2lib",
+          "lz4",
+          "lzma",
+          "lzo2",
+          "zlib",
+          "zstd"
+        ],
+        "crypto": "mbedtls",
+        "iconv": true,
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "programs": [
+          "none"
+        ],
+        "xar": "libxml2",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "pmjowqvy75ohvb67gbhjyig2n7uqv2f4mcnqbwjb6bbmqyvnc3nq====",
+      "dependencies": [
+        {
+          "name": "bzip2",
+          "hash": "wu3ng5mptclcfvol55zrmsh66kvvxji5",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libiconv",
+          "hash": "phfk2dxvgcxu2d7gt7m5govpmxwyjknw",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libxml2",
+          "hash": "pzcfwjxmrunefnngq2xzapna4labe4qs",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "lz4",
+          "hash": "lznqko5nick6l5st7hfqhh44kmr2rwbs",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "lzo",
+          "hash": "xmlgu3hi7ljhxsvlfpvltgd4jaoqedvx",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "mbedtls",
+          "hash": "cpap4utmt4xltizbd5hgh6usljawleuv",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "xz",
+          "hash": "4ocedbiloeno7wnhhx455vfehnxi4bqx",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "qpuezpedu37xahyewd5esz44gbb3kbzh",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "zstd",
+          "hash": "pcwlixqybrhnouolrp3vyy2rswxo74hm",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "5k4ozfyws5f2k6npy5k5cjbqkvfkpwig"
+    },
+    "lznqko5nick6l5st7hfqhh44kmr2rwbs": {
+      "name": "lz4",
+      "version": "1.9.4",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "makefile",
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "q3w4yyhzr4gca3v73pyviouaacrai6popu2v2tqpkp6ijkskcrya====",
+      "hash": "lznqko5nick6l5st7hfqhh44kmr2rwbs"
+    },
+    "xmlgu3hi7ljhxsvlfpvltgd4jaoqedvx": {
+      "name": "lzo",
+      "version": "2.10",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "2ef4xllxfwgrukzueosrnk4yrymrkqwhd4wuqdprs77nw4ymjvwa====",
+      "hash": "xmlgu3hi7ljhxsvlfpvltgd4jaoqedvx"
+    },
+    "cpap4utmt4xltizbd5hgh6usljawleuv": {
+      "name": "mbedtls",
+      "version": "2.28.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "makefile",
+        "build_type": "Release",
+        "libs": [
+          "static"
+        ],
+        "pic": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "fmyllflptlvldk2zt2zbtywwxxwrsjnn5fguuhr35vqylprsvnxa====",
+      "hash": "cpap4utmt4xltizbd5hgh6usljawleuv"
+    },
+    "pcwlixqybrhnouolrp3vyy2rswxo74hm": {
+      "name": "zstd",
+      "version": "1.5.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "makefile",
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "programs": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "qepkpvgnidycnst4gail65ea3nxozmfvtoqqg4yogcb7rhmbyluq====",
+      "hash": "pcwlixqybrhnouolrp3vyy2rswxo74hm"
+    },
+    "wwkqhq53es4rlmwzxtsw6tyno3m7hlh4": {
+      "name": "libmicrohttpd",
+      "version": "0.9.70",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "https": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "qepixrcv4djnckeqx6lviiblzxrh4d6kuirrb3zyhlqks6y24isa====",
+      "dependencies": [
+        {
+          "name": "gettext",
+          "hash": "lox2eif6nmv2t3pv7elmqlf2yqv3tkke",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "wwkqhq53es4rlmwzxtsw6tyno3m7hlh4"
+    },
+    "ed3izh67tigal5goxynpkheljhti4ctm": {
+      "name": "m4",
+      "version": "1.4.19",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "patches": [
+          "9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573",
+          "bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89"
+        ],
+        "sigsegv": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "external": {
+        "path": "/usr",
+        "module": null,
+        "extra_attributes": {}
+      },
+      "patches": [
+        "bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89",
+        "9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573"
+      ],
+      "package_hash": "sqgbfqha5alfkehw2p7okvlj6zwtfvnp7i6k2wpqjcm3iexzchfq====",
+      "hash": "ed3izh67tigal5goxynpkheljhti4ctm"
+    },
+    "eomtb6dz5goakkfyhovllbmq2ffjvndd": {
+      "name": "sqlite",
+      "version": "3.40.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "column_metadata": true,
+        "dynamic_extensions": true,
+        "fts": true,
+        "functions": false,
+        "rtree": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "mpraekydcf7kiigtbnr64n5oasbvx2gojhnj2u2tblklkvy5qtfq====",
+      "dependencies": [
+        {
+          "name": "readline",
+          "hash": "rhfnlhe3m4e5q3gdbc7esmetam2h6vsu",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "qpuezpedu37xahyewd5esz44gbb3kbzh",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "eomtb6dz5goakkfyhovllbmq2ffjvndd"
+    },
+    "rhfnlhe3m4e5q3gdbc7esmetam2h6vsu": {
+      "name": "readline",
+      "version": "8.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "patches": [
+          "bbf97f1ec40a929edab5aa81998c1e2ef435436c597754916e6a5868f273aff7"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "bbf97f1ec40a929edab5aa81998c1e2ef435436c597754916e6a5868f273aff7"
+      ],
+      "package_hash": "n4irfyzctyywbpjkipmeqzyqbmvpcl3l2ce6c475x6y7cmiy7aaq====",
+      "dependencies": [
+        {
+          "name": "ncurses",
+          "hash": "n2pn2wyxxup67o7a567qequmg7pabkyo",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "rhfnlhe3m4e5q3gdbc7esmetam2h6vsu"
+    },
+    "vbb26frnbb5szdbupzmjraggfsm7h4c4": {
+      "name": "gmp",
+      "version": "6.2.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "4i5iaqoht2qtpyzk5dxh4kntsucj6m256jy4jpvlcxzuzhx3xhza====",
+      "dependencies": [
+        {
+          "name": "autoconf",
+          "hash": "codtrkdbleu3mihatckqw3zrl2b4eo66",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "automake",
+          "hash": "47xqw4ejcrrtrukhxs5bekjdivmwooia",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "libtool",
+          "hash": "ynliqg4yrp3vmcfyak6vo3we66wseovg",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "m4",
+          "hash": "ed3izh67tigal5goxynpkheljhti4ctm",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "vbb26frnbb5szdbupzmjraggfsm7h4c4"
+    },
+    "codtrkdbleu3mihatckqw3zrl2b4eo66": {
+      "name": "autoconf",
+      "version": "2.71",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "external": {
+        "path": "/usr",
+        "module": null,
+        "extra_attributes": {}
+      },
+      "package_hash": "t22vjl5wm6tzjf2wulhmmxizcgvop5fgspsggccq654brpravlva====",
+      "hash": "codtrkdbleu3mihatckqw3zrl2b4eo66"
+    },
+    "47xqw4ejcrrtrukhxs5bekjdivmwooia": {
+      "name": "automake",
+      "version": "1.16.5",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "external": {
+        "path": "/usr",
+        "module": null,
+        "extra_attributes": {}
+      },
+      "package_hash": "mwdviv4g6xu2ttfs6dnzmwbofpxa4vke3y5egbb6w4fesykvnbda====",
+      "hash": "47xqw4ejcrrtrukhxs5bekjdivmwooia"
+    },
+    "ynliqg4yrp3vmcfyak6vo3we66wseovg": {
+      "name": "libtool",
+      "version": "2.4.7",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "external": {
+        "path": "/usr",
+        "module": null,
+        "extra_attributes": {}
+      },
+      "package_hash": "7lyavyiwpnrhw7tfv5vgri32at345gdegbixiskk63ext2f5rzza====",
+      "hash": "ynliqg4yrp3vmcfyak6vo3we66wseovg"
+    },
+    "a4pqg3ynlv4lwnwo2y34vujgx22fa7ap": {
+      "name": "python",
+      "version": "3.8.15",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "bz2": true,
+        "crypt": true,
+        "ctypes": true,
+        "dbm": true,
+        "debug": false,
+        "libxml2": true,
+        "lzma": true,
+        "nis": false,
+        "optimizations": false,
+        "patches": [
+          "0d98e93189bc278fbc37a50ed7f183bd8aaf249a8e1670a465f0db6bb4f8cf87",
+          "4c2457325f2b608b1b6a2c63087df8c26e07db3e3d493caf36a56f0ecf6fb768",
+          "f2fd060afc4b4618fe8104c4c5d771f36dc55b1db5a4623785a4ea707ec72fb4"
+        ],
+        "pic": true,
+        "pyexpat": true,
+        "pythoncmd": true,
+        "readline": true,
+        "shared": true,
+        "sqlite3": true,
+        "ssl": true,
+        "tkinter": false,
+        "uuid": true,
+        "zlib": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "0d98e93189bc278fbc37a50ed7f183bd8aaf249a8e1670a465f0db6bb4f8cf87",
+        "f2fd060afc4b4618fe8104c4c5d771f36dc55b1db5a4623785a4ea707ec72fb4",
+        "4c2457325f2b608b1b6a2c63087df8c26e07db3e3d493caf36a56f0ecf6fb768"
+      ],
+      "package_hash": "oeqjushvzkd5irvdwq3sxdn532xy2n3aodxn6c4berhwn56356ma====",
+      "dependencies": [
+        {
+          "name": "bzip2",
+          "hash": "wu3ng5mptclcfvol55zrmsh66kvvxji5",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "expat",
+          "hash": "4rq7kwm5le3477dctnclwibrtwv2w4fl",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "gdbm",
+          "hash": "iic5wvu5vy543usdtlbydim35iyl7nv2",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "gettext",
+          "hash": "lox2eif6nmv2t3pv7elmqlf2yqv3tkke",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libffi",
+          "hash": "ngibh7tegltahd4vpdu2cx25cw4js7sr",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libxcrypt",
+          "hash": "ftqxvhpjwj32sbzgft5bzzqpb6t72t2n",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "ncurses",
+          "hash": "n2pn2wyxxup67o7a567qequmg7pabkyo",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "openssl",
+          "hash": "4ttcehkwp4gsyktlgktmwryychqfzsgc",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "pkgconf",
+          "hash": "qcja2noiprmroskqkc5z2ddaoh5pzlie",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "readline",
+          "hash": "rhfnlhe3m4e5q3gdbc7esmetam2h6vsu",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "sqlite",
+          "hash": "eomtb6dz5goakkfyhovllbmq2ffjvndd",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "util-linux-uuid",
+          "hash": "t2l6hnllygfttehdf3oc237ifrp6onvs",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "xz",
+          "hash": "4ocedbiloeno7wnhhx455vfehnxi4bqx",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "qpuezpedu37xahyewd5esz44gbb3kbzh",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "a4pqg3ynlv4lwnwo2y34vujgx22fa7ap"
+    },
+    "4rq7kwm5le3477dctnclwibrtwv2w4fl": {
+      "name": "expat",
+      "version": "2.4.8",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "libbsd": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "cyr63m7lwwlyhb4u3t6i5hc35v4dhnl5d6eudsgpplunm6eadqqq====",
+      "dependencies": [
+        {
+          "name": "libbsd",
+          "hash": "osnod3eox3psda6nyp3kk66qbbk7r67b",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "4rq7kwm5le3477dctnclwibrtwv2w4fl"
+    },
+    "osnod3eox3psda6nyp3kk66qbbk7r67b": {
+      "name": "libbsd",
+      "version": "0.11.5",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "msd4bmra3f6ttxrjbsuvsykq5ews6b3scmelzux3bteauxp2w7iq====",
+      "dependencies": [
+        {
+          "name": "libmd",
+          "hash": "exauwf4g7jnvgjyttda7a4gtpgklvlfl",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "osnod3eox3psda6nyp3kk66qbbk7r67b"
+    },
+    "exauwf4g7jnvgjyttda7a4gtpgklvlfl": {
+      "name": "libmd",
+      "version": "1.0.4",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "zs2e7fqr4dzthpj5fascqvfn7xcahf7dtc5bzdwfv6vqkzi7oncq====",
+      "hash": "exauwf4g7jnvgjyttda7a4gtpgklvlfl"
+    },
+    "iic5wvu5vy543usdtlbydim35iyl7nv2": {
+      "name": "gdbm",
+      "version": "1.23",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "liepxl6phlcxbgfmibxafhewtihlgaa4x3hko37ckqlafhxkrgdq====",
+      "dependencies": [
+        {
+          "name": "readline",
+          "hash": "rhfnlhe3m4e5q3gdbc7esmetam2h6vsu",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "iic5wvu5vy543usdtlbydim35iyl7nv2"
+    },
+    "ngibh7tegltahd4vpdu2cx25cw4js7sr": {
+      "name": "libffi",
+      "version": "3.4.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "jyaxy6b6uaavi4hhp435lz6uwxjhg2w6vrvnk76o7wymwrbzetfq====",
+      "hash": "ngibh7tegltahd4vpdu2cx25cw4js7sr"
+    },
+    "ftqxvhpjwj32sbzgft5bzzqpb6t72t2n": {
+      "name": "libxcrypt",
+      "version": "4.4.33",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "obsolete_api": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "sbp4xqkq2edwikrept7ifq5g4jq33kpnfb3w6tymgh4sznol44mq====",
+      "hash": "ftqxvhpjwj32sbzgft5bzzqpb6t72t2n"
+    },
+    "4ttcehkwp4gsyktlgktmwryychqfzsgc": {
+      "name": "openssl",
+      "version": "1.1.1s",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "certs": "mozilla",
+        "docs": false,
+        "shared": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "ohcxotxphs5lvc32uqdbv5yzlyntjsfly6njol6w3lunyfp6u2ma====",
+      "dependencies": [
+        {
+          "name": "ca-certificates-mozilla",
+          "hash": "f22dvol6ioe6sn6q7qrd22ulmnidedyq",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "perl",
+          "hash": "ente33ew53bfugy5y7hkaw2azqypmwfx",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "qpuezpedu37xahyewd5esz44gbb3kbzh",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "4ttcehkwp4gsyktlgktmwryychqfzsgc"
+    },
+    "f22dvol6ioe6sn6q7qrd22ulmnidedyq": {
+      "name": "ca-certificates-mozilla",
+      "version": "2022-10-11",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "534ljqvtxlihbb7evesr4emhe74e6juaardt6dkra4fpa7pcolxa====",
+      "hash": "f22dvol6ioe6sn6q7qrd22ulmnidedyq"
+    },
+    "ente33ew53bfugy5y7hkaw2azqypmwfx": {
+      "name": "perl",
+      "version": "5.36.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "cpanm": true,
+        "shared": true,
+        "threads": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "u62pci4umezozslqitpebgrjmmewppnpenzr3pd3e2kiif6obtqq====",
+      "dependencies": [
+        {
+          "name": "berkeley-db",
+          "hash": "f2s6btj5i7kibfvciq3yi36yeuhxhwpb",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "bzip2",
+          "hash": "wu3ng5mptclcfvol55zrmsh66kvvxji5",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "gdbm",
+          "hash": "iic5wvu5vy543usdtlbydim35iyl7nv2",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "qpuezpedu37xahyewd5esz44gbb3kbzh",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "ente33ew53bfugy5y7hkaw2azqypmwfx"
+    },
+    "f2s6btj5i7kibfvciq3yi36yeuhxhwpb": {
+      "name": "berkeley-db",
+      "version": "18.1.40",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cxx": true,
+        "docs": false,
+        "patches": [
+          "26090f418891757af46ac3b89a9f43d6eb5989f7a3dce3d1cfc99fba547203b3",
+          "b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522"
+        ],
+        "stl": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522",
+        "26090f418891757af46ac3b89a9f43d6eb5989f7a3dce3d1cfc99fba547203b3"
+      ],
+      "package_hash": "vpd5eetcurni5woqzl6jrukuo4a6fr5yoluxz32gxezgx5ftpxza====",
+      "hash": "f2s6btj5i7kibfvciq3yi36yeuhxhwpb"
+    },
+    "t2l6hnllygfttehdf3oc237ifrp6onvs": {
+      "name": "util-linux-uuid",
+      "version": "2.38.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "4jp7kdd57mds63hemompvj5ffay2ry5xvuol2b6vs3ldnduwyona====",
+      "dependencies": [
+        {
+          "name": "pkgconf",
+          "hash": "qcja2noiprmroskqkc5z2ddaoh5pzlie",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "t2l6hnllygfttehdf3oc237ifrp6onvs"
+    },
+    "wt3idwn6voumnvbz6f7p2eg4gyh73dbg": {
+      "name": "texinfo",
+      "version": "6.8",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "external": {
+        "path": "/usr",
+        "module": null,
+        "extra_attributes": {}
+      },
+      "package_hash": "g24drwy73ehse22ehhrceyr5kabhkhk66h4jahhikzwowm5xwq2q====",
+      "hash": "wt3idwn6voumnvbz6f7p2eg4gyh73dbg"
+    },
+    "3uebtou3anlgm3fhdoo7wwvwdsyulqne": {
+      "name": "mpich",
+      "version": "4.1.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "mochi",
+      "parameters": {
+        "argobots": false,
+        "benvolio": false,
+        "build_system": "autotools",
+        "cuda": false,
+        "datatype-engine": "auto",
+        "device": "ch4",
+        "fortran": true,
+        "hwloc": true,
+        "hydra": true,
+        "libxml2": true,
+        "netmod": "ofi",
+        "pci": true,
+        "pmi": "pmi",
+        "rocm": false,
+        "romio": true,
+        "slurm": false,
+        "two_level_namespace": false,
+        "vci": false,
+        "verbs": false,
+        "wrapperrpath": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "szfwwpp2rjgp244k4f4seogbhp35tm2r26il6wn63scc66zx4f7a====",
+      "dependencies": [
+        {
+          "name": "findutils",
+          "hash": "7ciuu2fsx72iblod5w5idhrerohjk53m",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "hwloc",
+          "hash": "gniyb5r43s6kkdz4r7fv4fjmdm26ch4f",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libfabric",
+          "hash": "rhuq67re6b5gg7swkmsvbh53a7wbfdfd",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libpciaccess",
+          "hash": "krimq63lhbpok34lvzm54fg3cnstt5ih",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libxml2",
+          "hash": "pzcfwjxmrunefnngq2xzapna4labe4qs",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "pkgconf",
+          "hash": "qcja2noiprmroskqkc5z2ddaoh5pzlie",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "yaksa",
+          "hash": "ahj7tedkztk37zajkcfd3i34nzjzv6yd",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "3uebtou3anlgm3fhdoo7wwvwdsyulqne"
+    },
+    "7ciuu2fsx72iblod5w5idhrerohjk53m": {
+      "name": "findutils",
+      "version": "4.9.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "patches": [
+          "440b9543365b4692a2e6e0b5674809659846658d34d1dfc542c4397c8d668b92"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "external": {
+        "path": "/usr",
+        "module": null,
+        "extra_attributes": {}
+      },
+      "patches": [
+        "440b9543365b4692a2e6e0b5674809659846658d34d1dfc542c4397c8d668b92"
+      ],
+      "package_hash": "2sgl24um676pxizvcju4i42f4k3bnpq7jdctrvxzceyikvaj2mra====",
+      "hash": "7ciuu2fsx72iblod5w5idhrerohjk53m"
+    },
+    "gniyb5r43s6kkdz4r7fv4fjmdm26ch4f": {
+      "name": "hwloc",
+      "version": "2.8.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cairo": false,
+        "cuda": false,
+        "gl": false,
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "libudev": false,
+        "libxml2": true,
+        "netloc": false,
+        "nvml": false,
+        "oneapi-level-zero": false,
+        "opencl": false,
+        "pci": true,
+        "rocm": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "jm6jat3j6n52xeyfphg6zct6gduwpavztn5tjfabaazzltxd6r5q====",
+      "dependencies": [
+        {
+          "name": "libpciaccess",
+          "hash": "krimq63lhbpok34lvzm54fg3cnstt5ih",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libxml2",
+          "hash": "pzcfwjxmrunefnngq2xzapna4labe4qs",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "ncurses",
+          "hash": "n2pn2wyxxup67o7a567qequmg7pabkyo",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "pkgconf",
+          "hash": "qcja2noiprmroskqkc5z2ddaoh5pzlie",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "gniyb5r43s6kkdz4r7fv4fjmdm26ch4f"
+    },
+    "krimq63lhbpok34lvzm54fg3cnstt5ih": {
+      "name": "libpciaccess",
+      "version": "0.16",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "h5aaq3rarnnlmpbv3464p73xppknzxucrj73dt277pmozyk4alva====",
+      "dependencies": [
+        {
+          "name": "libtool",
+          "hash": "ynliqg4yrp3vmcfyak6vo3we66wseovg",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "pkgconf",
+          "hash": "qcja2noiprmroskqkc5z2ddaoh5pzlie",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "util-macros",
+          "hash": "p73ufw25cm4m46lux5qffb5vsreayzwv",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "krimq63lhbpok34lvzm54fg3cnstt5ih"
+    },
+    "p73ufw25cm4m46lux5qffb5vsreayzwv": {
+      "name": "util-macros",
+      "version": "1.19.3",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "5atggv5uirdl2trmzmewkonyvzmzg6sg46zpvurdk43wi2gpr7pa====",
+      "hash": "p73ufw25cm4m46lux5qffb5vsreayzwv"
+    },
+    "rhuq67re6b5gg7swkmsvbh53a7wbfdfd": {
+      "name": "libfabric",
+      "version": "1.17.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "mochi",
+      "parameters": {
+        "build_system": "autotools",
+        "cuda": false,
+        "debug": false,
+        "disable-spinlocks": false,
+        "fabrics": [
+          "sockets",
+          "tcp",
+          "udp"
+        ],
+        "kdreg": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "l7s5ve6fpxznprxagwceykprissnvrdbeakhivqu5ckid2c34wxq====",
+      "hash": "rhuq67re6b5gg7swkmsvbh53a7wbfdfd"
+    },
+    "ahj7tedkztk37zajkcfd3i34nzjzv6yd": {
+      "name": "yaksa",
+      "version": "0.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cuda": false,
+        "rocm": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "nmv3cxilk67mmou4uq276nr7nuqcypyv7djttzhueceyyzpohkna====",
+      "dependencies": [
+        {
+          "name": "autoconf",
+          "hash": "codtrkdbleu3mihatckqw3zrl2b4eo66",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "automake",
+          "hash": "47xqw4ejcrrtrukhxs5bekjdivmwooia",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "libtool",
+          "hash": "ynliqg4yrp3vmcfyak6vo3we66wseovg",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "m4",
+          "hash": "ed3izh67tigal5goxynpkheljhti4ctm",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "python",
+          "hash": "a4pqg3ynlv4lwnwo2y34vujgx22fa7ap",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "ahj7tedkztk37zajkcfd3i34nzjzv6yd"
+    },
+    "mruuv75h4c4liepsk4emfed43efqshei": {
+      "name": "rust",
+      "version": "1.66.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "analysis": true,
+        "build_system": "generic",
+        "clippy": true,
+        "extra_targets": [
+          "none"
+        ],
+        "rls": false,
+        "rustfmt": true,
+        "src": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "external": {
+        "path": "/usr",
+        "module": null,
+        "extra_attributes": {}
+      },
+      "package_hash": "chnltk4odzxb5ygabrijjkzqnra3qrez3wrbmfnohvxvd3jinnyq====",
+      "hash": "mruuv75h4c4liepsk4emfed43efqshei"
+    },
+    "r5z3wb2z6hklikvq3kfvmq5keyjaw4du": {
+      "name": "mdspan",
+      "version": "stable",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "robertu94",
+      "parameters": {
+        "build_system": "cmake",
+        "build_type": "RelWithDebInfo",
+        "generator": "make",
+        "ipo": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "l2c4j2wet7zgpiafxtkq7iol4zjnksfrh6p4shmtjbktxfjb7ywa====",
+      "dependencies": [
+        {
+          "name": "cmake",
+          "hash": "4cbscskjc5toxzyyk5x4fozkp4gkszie",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "gmake",
+          "hash": "v2ndfggjs7saf3herg2qupr65kbr5d3s",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "r5z3wb2z6hklikvq3kfvmq5keyjaw4du"
+    },
+    "4cbscskjc5toxzyyk5x4fozkp4gkszie": {
+      "name": "cmake",
+      "version": "3.22.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "build_type": "Release",
+        "doc": false,
+        "ncurses": true,
+        "ownlibs": true,
+        "qt": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "external": {
+        "path": "/usr",
+        "module": null,
+        "extra_attributes": {}
+      },
+      "package_hash": "wk4p3tel5kyz2mmk3p7y5bx4q7uzjq4vpbkrjdx6dcthkqxhbbpq====",
+      "hash": "4cbscskjc5toxzyyk5x4fozkp4gkszie"
+    },
+    "v2ndfggjs7saf3herg2qupr65kbr5d3s": {
+      "name": "gmake",
+      "version": "4.3",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "guile": false,
+        "nls": true,
+        "patches": [
+          "599f134e69f696ad1ff32b001ea132a49749ebd92ab2b4f4d26afdda2c33cc43"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "external": {
+        "path": "/usr",
+        "module": null,
+        "extra_attributes": {}
+      },
+      "patches": [
+        "599f134e69f696ad1ff32b001ea132a49749ebd92ab2b4f4d26afdda2c33cc43"
+      ],
+      "package_hash": "iwrsf73g6ywz2t4qxcpnm6fg6eyv3lakxqduyfbab2umec6t4owq====",
+      "hash": "v2ndfggjs7saf3herg2qupr65kbr5d3s"
+    },
+    "54bjaz76njchwa3dcdioraqtgjxfdvxj": {
+      "name": "py-m",
+      "version": "2.6.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "robertu94",
+      "parameters": {
+        "build_system": "python_pip",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "ltcyt4zbgtemjiocypzb24dp7glozlxk3jivr4c5nybfua3b2p7a====",
+      "dependencies": [
+        {
+          "name": "automake",
+          "hash": "47xqw4ejcrrtrukhxs5bekjdivmwooia",
+          "type": [
+            "run"
+          ]
+        },
+        {
+          "name": "cmake",
+          "hash": "4cbscskjc5toxzyyk5x4fozkp4gkszie",
+          "type": [
+            "run"
+          ]
+        },
+        {
+          "name": "ninja",
+          "hash": "o3pof42u2qnmeejhagpspxpdp6kxoju2",
+          "type": [
+            "run"
+          ]
+        },
+        {
+          "name": "py-jinja2",
+          "hash": "jbe2sfeuh2aeu73u4iuat2mcbizszkjf",
+          "type": [
+            "run"
+          ]
+        },
+        {
+          "name": "py-pip",
+          "hash": "lqld4ppek62zg3m5i2uy7ru4gs7irmf7",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "py-setuptools",
+          "hash": "jmd6gly3k7freisxuawrh7zavfyvrbmx",
+          "type": [
+            "build",
+            "run"
+          ]
+        },
+        {
+          "name": "py-wheel",
+          "hash": "s2utymcbh4qqmmot6y2ox56vzqz3pmna",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "python",
+          "hash": "a4pqg3ynlv4lwnwo2y34vujgx22fa7ap",
+          "type": [
+            "build",
+            "run"
+          ]
+        }
+      ],
+      "hash": "54bjaz76njchwa3dcdioraqtgjxfdvxj"
+    },
+    "o3pof42u2qnmeejhagpspxpdp6kxoju2": {
+      "name": "ninja",
+      "version": "1.10.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "external": {
+        "path": "/usr",
+        "module": null,
+        "extra_attributes": {}
+      },
+      "package_hash": "zsm3ziitxxynq4q3isruj7dpflsz7s2onoji23foanhmyctspi3q====",
+      "hash": "o3pof42u2qnmeejhagpspxpdp6kxoju2"
+    },
+    "jbe2sfeuh2aeu73u4iuat2mcbizszkjf": {
+      "name": "py-jinja2",
+      "version": "3.1.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "python_pip",
+        "i18n": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "yoaydkde6fdjkjrrgpbqpcetl46gzq6gereajtmchunypq5fmk2a====",
+      "dependencies": [
+        {
+          "name": "py-markupsafe",
+          "hash": "5vqrhczlxli7sdvj5lksprnjaiztuhrc",
+          "type": [
+            "build",
+            "run"
+          ]
+        },
+        {
+          "name": "py-pip",
+          "hash": "lqld4ppek62zg3m5i2uy7ru4gs7irmf7",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "py-setuptools",
+          "hash": "jmd6gly3k7freisxuawrh7zavfyvrbmx",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "py-wheel",
+          "hash": "s2utymcbh4qqmmot6y2ox56vzqz3pmna",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "python",
+          "hash": "a4pqg3ynlv4lwnwo2y34vujgx22fa7ap",
+          "type": [
+            "build",
+            "run"
+          ]
+        }
+      ],
+      "hash": "jbe2sfeuh2aeu73u4iuat2mcbizszkjf"
+    },
+    "5vqrhczlxli7sdvj5lksprnjaiztuhrc": {
+      "name": "py-markupsafe",
+      "version": "2.1.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "python_pip",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "47bvjmkphp6oabhr75t76r6brc7elzpqhtyh7cea6be6nzt5te4q====",
+      "dependencies": [
+        {
+          "name": "py-pip",
+          "hash": "lqld4ppek62zg3m5i2uy7ru4gs7irmf7",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "py-setuptools",
+          "hash": "jmd6gly3k7freisxuawrh7zavfyvrbmx",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "py-wheel",
+          "hash": "s2utymcbh4qqmmot6y2ox56vzqz3pmna",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "python",
+          "hash": "a4pqg3ynlv4lwnwo2y34vujgx22fa7ap",
+          "type": [
+            "build",
+            "run"
+          ]
+        }
+      ],
+      "hash": "5vqrhczlxli7sdvj5lksprnjaiztuhrc"
+    },
+    "lqld4ppek62zg3m5i2uy7ru4gs7irmf7": {
+      "name": "py-pip",
+      "version": "22.2.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "dlhran7ow6bw72xwwujpw7y34md6gjo6vgfowizhl6um2uejanta====",
+      "dependencies": [
+        {
+          "name": "python",
+          "hash": "a4pqg3ynlv4lwnwo2y34vujgx22fa7ap",
+          "type": [
+            "build",
+            "run"
+          ]
+        }
+      ],
+      "hash": "lqld4ppek62zg3m5i2uy7ru4gs7irmf7"
+    },
+    "jmd6gly3k7freisxuawrh7zavfyvrbmx": {
+      "name": "py-setuptools",
+      "version": "65.5.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "y6xa5sgzqn3kp4mq6ffr5yh4xjqfnzycltgt7ianaxezqmkxzdya====",
+      "dependencies": [
+        {
+          "name": "py-pip",
+          "hash": "lqld4ppek62zg3m5i2uy7ru4gs7irmf7",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "python",
+          "hash": "a4pqg3ynlv4lwnwo2y34vujgx22fa7ap",
+          "type": [
+            "build",
+            "run"
+          ]
+        }
+      ],
+      "hash": "jmd6gly3k7freisxuawrh7zavfyvrbmx"
+    },
+    "s2utymcbh4qqmmot6y2ox56vzqz3pmna": {
+      "name": "py-wheel",
+      "version": "0.37.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "fedora37",
+        "target": {
+          "name": "icelake",
+          "vendor": "GenuineIntel",
+          "features": [
+            "adx",
+            "aes",
+            "avx",
+            "avx2",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "f16c",
+            "fma",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdpid",
+            "rdrand",
+            "rdseed",
+            "sha_ni",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "cascadelake",
+            "cannonlake"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "12.2.1"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "nrjlpe43ohfmqeuo3mawag2kwnq2hno3ebshmfy6pn7vtklynvdq====",
+      "dependencies": [
+        {
+          "name": "py-pip",
+          "hash": "lqld4ppek62zg3m5i2uy7ru4gs7irmf7",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "python",
+          "hash": "a4pqg3ynlv4lwnwo2y34vujgx22fa7ap",
+          "type": [
+            "build",
+            "run"
+          ]
+        }
+      ],
+      "hash": "s2utymcbh4qqmmot6y2ox56vzqz3pmna"
+    }
+  }
+}

@@ -1,2 +1,5 @@
 /target
 .startup.gdb
+.spack-env
+/paper
+/spack-build*
