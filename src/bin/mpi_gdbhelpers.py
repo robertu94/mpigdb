@@ -123,3 +123,22 @@ class MPIContinueThread(gdb.Command):
 
 
 MPIContinueThread()
+
+class MPIWait(gdb.Command):
+    """executes arg when all current inferiors exit"""
+
+    def __init__(self):
+        super().__init__("mpiw", gdb.COMMAND_USER)
+
+    def invoke(self, arg: str, from_tty: bool):
+        infset = set(i.num for i in gdb.inferiors())
+
+        def exit_handler(evt):
+            nonlocal infset
+            infset.discard(evt.inferior.num)
+            if not infset:
+                gdb.execute(arg)
+        gdb.events.exited.connect(exit_handler)
+
+
+MPIWait()
