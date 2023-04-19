@@ -212,6 +212,8 @@ fn main() -> anyhow::Result<()> {
     let mut i = 0;
     for group in 0..args.procs.len() {
         for _p in 0..args.procs[group] {
+            mpiexec_args.push("-np".to_string());
+            mpiexec_args.push("1".to_string());
             mpiexec_args.extend(args.mpi_args[group].clone());
             mpiexec_args.push(args.helper.clone());
             mpiexec_args.push(control_port.clone());
