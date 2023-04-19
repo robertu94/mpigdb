@@ -11,6 +11,8 @@ struct CLIArgs {
     mpi_args: Vec<Vec<String>>,
     dbg_args: Vec<String>,
     prg_args: Vec<Vec<String>>,
+    gdbserver: String,
+    gdb: String,
     helper: String,
     dry_run: bool,
     verbose: bool,
@@ -74,7 +76,11 @@ enum CliState {
     HelperFlag,
     GlobalFlag,
     DbgFlag,
+    GDBServerPath,
+    GDBPath,
 }
+
+const HELPMSG: &str = include_str!("../../README.md");
 
 fn parse_args() -> anyhow::Result<CLIArgs> {
     let mut helper = "mpigdb_helper".to_string();
@@ -88,10 +94,16 @@ fn parse_args() -> anyhow::Result<CLIArgs> {
     let mut global_args = Vec::new();
     let mut dbg_args = Vec::new();
     let mut verbose = false;
+    let mut gdbserver = "gdbserver".to_string();
+    let mut gdb = "gdb".to_string();
 
     for arg in std::env::args().skip(1) {
         state = match &state {
             CliState::MpiFlags => match &*arg {
+                "-h" | "--help" => {
+                    println!("{}", HELPMSG);
+                    std::process::exit(1);
+                }
                 "-n" | "-np" => CliState::ProcsFlag,
                 "--mpigdb_verbose"  => {
                     verbose = true;
@@ -107,6 +119,8 @@ fn parse_args() -> anyhow::Result<CLIArgs> {
                 }
                 "--mpigdb_dbg_arg" => CliState::DbgFlag,
                 "--mpigdb_helper" => CliState::HelperFlag,
+                "--mpigdb_gdbserver" => CliState::GDBServerPath,
+                "--mpigdb_gdb" => CliState::GDBPath,
                 "--mpigdb_port" => CliState::PortFlag,
                 "--mpigdb_mpi_flag" => CliState::GlobalFlag,
                 "--mpigdb_dryrun" => {
@@ -153,6 +167,14 @@ fn parse_args() -> anyhow::Result<CLIArgs> {
                 dbg_args.push(arg);
                 CliState::MpiFlags
             }
+            CliState::GDBServerPath => {
+                gdbserver = arg.to_string();
+                CliState::MpiFlags
+            }
+            CliState::GDBPath => {
+                gdb = arg.to_string();
+                CliState::MpiFlags
+            }
         }
     }
 
@@ -165,6 +187,8 @@ fn parse_args() -> anyhow::Result<CLIArgs> {
         helper,
         dry_run,
         verbose,
+        gdbserver,
+        gdb,
         global_mpi_args: global_args,
     })
 }
@@ -193,6 +217,7 @@ fn main() -> anyhow::Result<()> {
             mpiexec_args.push(control_port.clone());
             mpiexec_args.push((args.base_port + i + 1).to_string());
             mpiexec_args.push((if args.verbose  {"1"} else {"0"}).to_string());
+            mpiexec_args.push(args.gdbserver.clone());
             mpiexec_args.extend(args.prg_args[group].clone());
             if i < total_procs - 1 {
                 mpiexec_args.push(":".to_string())
@@ -237,7 +262,7 @@ fn main() -> anyhow::Result<()> {
         let hosts = hostports.lock().unwrap();
         write_startup_file(&*hosts)?;
 
-        Command::new("gdb")
+        Command::new(args.gdb)
             .arg("-x")
             .arg(".startup.gdb")
             .args(args.dbg_args)

@@ -7,7 +7,8 @@ pub fn main() -> Result<(), anyhow::Error> {
     let control_addr = &std::env::args().nth(1).unwrap();
     let port = &std::env::args().nth(2).unwrap();
     let verbose = std::env::args().nth(3).unwrap() == "1";
-    let child_args: Vec<String> = std::env::args().skip(4).collect();
+    let gdbserver_path = std::env::args().nth(4).unwrap();
+    let child_args: Vec<String> = std::env::args().skip(5).collect();
 
     //send back the connection string
     {
@@ -22,7 +23,7 @@ pub fn main() -> Result<(), anyhow::Error> {
     if verbose {
         eprintln!("child {:?}", child_args);
     }
-    Command::new("gdbserver")
+    Command::new(gdbserver_path)
         .arg("--once")
         .arg(format!("{host}:{port}"))
         .args(child_args)

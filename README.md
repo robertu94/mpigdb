@@ -18,6 +18,8 @@ This wrapper defines several GDB extension commands that should help make things
 
 `mpib` break on all or a subset of threads using `-t $tid`
 
+`mpiw` preform a command when all processes have exited
+
 You also should probably know about the following buildin commands
 
 `thread apply all` applies a command to all threads
@@ -29,6 +31,33 @@ You also should probably know about the following buildin commands
 `interupt` if the current thread is running stop it.
 
 `thread $tid` switch to thread id
+
+## CLI Arguments
+
++ `--mpigdb_dbg_arg` pass a argument to GDB
++ `--mpigdb_helper` path to the MPI GDB helper on the worker nodes
++ `--mpigdb_gdbserver` path to the gdbserver helper on the worker nodes. default "gdbserve"
++ `--mpigdb_gdb` path to the gdb executable. default: "gdb"
++ `--mpigdb_port` port to connect on the master process. default "8000"
++ `--mpigdb_mpi_flag` flags to pass to mpigdb
++ `--mpigdb_dryrun` print out the command, but do not launch mpidgb
+
+The flags `--interpreter=mi` and `--tty=` are forwarded to GDB hopefully enable usage from VSCode in the future.
+
+
+## Examples
+
+`mpigdb -np 8 -- ./play/build/heatdist`
+
+launch heatdist with 8 processes.
+
+`mpigdb -np 8 --mpigdb_dbg_flag -x --mpigdb_dbg_flag /tmp/debug.dbg -- ./play/build/heatdist`
+
+launch heat dist with 8 processes using the script /tmp/debug.dbg
+
+`mpigdb --mpigdb_gdb cuda-gdb  --mpigdb_gdbserver cuda-gdbserver -np 8 -- ./play/build/heatdist`
+
+same, but use cuda-gdb to debug GPU programs
 
 ## Building and Installation
 
@@ -43,4 +72,8 @@ Earlier versions may work, but are not tested
 
 ## Limitations and Known Bugs
 
-For HPC systems with meaningful scale, we should probably integrate with PMIx, but we currently do onot.
+For HPC systems with meaningful scale, we should probably integrate with PMIx, but we currently do not.
+
+Does not currently work with LLDB which is required for MacOS -- PRs are accepted.
+
+Does not currently work as a drop-in replacement for VSCode. [See issue](https://github.com/microsoft/vscode-cpptools/issues/1723).
