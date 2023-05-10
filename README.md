@@ -34,6 +34,7 @@ You also should probably know about the following buildin commands
 
 ## CLI Arguments
 
++ `--mpigdb_frontend` debugging frontend to use defaults to `gdb`.  Also accepts `vscode` to support writing launch.json files for VSCode
 + `--mpigdb_dbg_arg` pass a argument to GDB
 + `--mpigdb_helper` path to the MPI GDB helper on the worker nodes
 + `--mpigdb_gdbserver` path to the gdbserver helper on the worker nodes. default "gdbserve"
@@ -76,4 +77,9 @@ For HPC systems with meaningful scale, we should probably integrate with PMIx, b
 
 Does not currently work with LLDB which is required for MacOS -- PRs are accepted.
 
-Does not currently work as a drop-in replacement for VSCode. [See issue](https://github.com/microsoft/vscode-cpptools/issues/1723).
+Has limited support for VSCode. [See issue for some of the issues with a fuller implementation](https://github.com/microsoft/vscode-cpptools/issues/1723).
+
+## Acknowledgments
+
+Credit to @mystery-e204 and his [`mpidb`](https://github.com/mystery-e204/mpidb) tool for an example of how to produce a file that can be used with VSCode.
+This approach is limited in that the debugger instances in vscode are seperate and can't easily be controlled together.

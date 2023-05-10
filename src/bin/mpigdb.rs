@@ -3,6 +3,14 @@ use std::io::prelude::*;
 use std::os::unix::process::CommandExt;
 use std::process::{Command, Stdio};
 use std::sync::mpsc::channel;
+use serde::Serialize;
+
+#[derive(Debug)]
+enum DebugFrontend {
+    GDB,
+    VSCode
+}
+
 #[derive(Debug)]
 struct CLIArgs {
     procs: Vec<usize>,
@@ -13,9 +21,121 @@ struct CLIArgs {
     prg_args: Vec<Vec<String>>,
     gdbserver: String,
     gdb: String,
+    frontend: DebugFrontend,
     helper: String,
     dry_run: bool,
     verbose: bool,
+}
+
+#[derive(Serialize)]
+struct VscodeEnvionment {
+    name: String,
+    value: String
+}
+
+#[derive(Serialize)]
+#[allow(non_snake_case)]
+struct VscodeStartupCommands {
+    description: String,
+    text: String,
+    ignoreFailures: bool,
+}
+
+
+#[allow(non_camel_case_types)]
+#[allow(non_snake_case)]
+#[derive(Serialize)]
+struct VscodeConfiguration {
+    name: String,
+    program: String,
+    miDebuggerServerAddress: String,
+    r#type : String,
+    request: String,
+    args: Vec<String>,
+    stopAtEntry: bool,
+    cwd: String,
+    environment: Vec<VscodeEnvionment>,
+    externalConsole: bool,
+    MIMode: String,
+     #[serde(skip_serializing_if = "Option::is_none")]
+    miDebuggerPath: Option<String>,
+     #[serde(skip_serializing_if = "Option::is_none")]
+    miDebuggerArgs: Option<String>,
+    setupCommands: Vec<VscodeStartupCommands>
+
+}
+#[derive(Serialize)]
+struct VscodeCompound {
+    name: String,
+    configurations: Vec<String>
+}
+
+#[derive(Serialize)]
+struct VscodeLaunchJson {
+    version: String,
+    compounds: Vec<VscodeCompound>,
+    configurations: Vec<VscodeConfiguration>
+}
+
+impl VscodeLaunchJson {
+    fn new(args: &CLIArgs, hosts: &Vec<String>) -> VscodeLaunchJson {
+
+        let mut configurations_names = Vec::new();
+        let mut configurations = Vec::new();
+        let mut idx_to_program = std::collections::HashMap::<usize, String>::new();
+
+        let mut i: usize = 0;
+        for group in 0..args.procs.len() {
+            for _p in 0..args.procs[group] {
+                idx_to_program.insert(i,args.prg_args[group].first().unwrap().clone());
+                i+=1;
+            }
+        }
+
+        for (idx, host) in hosts.iter().enumerate() {
+            let name = format!("debug rank {}", idx);
+            let mut host  = host.clone();
+            host.pop();
+
+            configurations.push(VscodeConfiguration {
+                name: name.clone(),
+                program: idx_to_program[&idx].clone(),
+                r#type: "cppdbg".into(),
+                miDebuggerServerAddress: host,
+                request: "launch".into(),
+                args: Vec::new(),
+                stopAtEntry: false,
+                cwd: "${workspaceRoot}".into(),
+                externalConsole: true,
+                environment: Vec::new(),
+                MIMode: "gdb".into(),
+                setupCommands: vec!(
+                    VscodeStartupCommands {
+                        description: "pretty print outputs".to_string(),
+                        text: "-enable-pretty-printing".to_string(),
+                        ignoreFailures: true
+
+                    },
+                ),
+                miDebuggerPath: Some(args.gdb.clone()),
+                miDebuggerArgs: None,
+
+            });
+            configurations_names.push(name)
+        }
+
+        let compounds = VscodeCompound {
+            name: "debug all ranks".into(),
+            configurations: configurations_names
+        };
+
+
+        VscodeLaunchJson {
+            version: "0.2.0".into(),
+            compounds: vec!(compounds),
+            configurations,
+        }
+    }
 }
 
 fn write_startup_file(hostports: &[String]) -> anyhow::Result<()> {
@@ -78,6 +198,7 @@ enum CliState {
     DbgFlag,
     GDBServerPath,
     GDBPath,
+    Frontend,
 }
 
 const HELPMSG: &str = include_str!("../../README.md");
@@ -87,6 +208,7 @@ fn parse_args() -> anyhow::Result<CLIArgs> {
     let mut base_port = 8000;
     let mut dry_run = false;
     let mut state = CliState::MpiFlags;
+    let mut frontend = DebugFrontend::GDB;
 
     let mut procs = vec![1];
     let mut mpi_args: Vec<Vec<String>> = vec![Vec::new()];
@@ -117,6 +239,7 @@ fn parse_args() -> anyhow::Result<CLIArgs> {
                     dbg_args.push(arg);
                     CliState::MpiFlags
                 }
+                "--mpigdb_frontend" => CliState::Frontend,
                 "--mpigdb_dbg_arg" => CliState::DbgFlag,
                 "--mpigdb_helper" => CliState::HelperFlag,
                 "--mpigdb_gdbserver" => CliState::GDBServerPath,
@@ -149,6 +272,17 @@ fn parse_args() -> anyhow::Result<CLIArgs> {
             CliState::ProcsFlag => {
                 let last = procs.last_mut().unwrap();
                 *last = arg.parse::<usize>()?;
+                CliState::MpiFlags
+            }
+            CliState::Frontend => {
+                match &arg[..] {
+                    "gdb" => { frontend = DebugFrontend::GDB; }
+                    "vscode" => { frontend = DebugFrontend::VSCode; }
+                    &_ => {
+                        eprintln!("invalid frontend {}", arg);
+                        std::process::exit(1);
+                    }
+                }
                 CliState::MpiFlags
             }
             CliState::HelperFlag => {
@@ -188,6 +322,7 @@ fn parse_args() -> anyhow::Result<CLIArgs> {
         dry_run,
         verbose,
         gdbserver,
+        frontend,
         gdb,
         global_mpi_args: global_args,
     })
@@ -208,7 +343,7 @@ fn main() -> anyhow::Result<()> {
         eprintln!("listening {control_port}");
     }
 
-    mpiexec_args.extend(args.global_mpi_args);
+    mpiexec_args.extend(args.global_mpi_args.clone());
     let mut i = 0;
     for group in 0..args.procs.len() {
         for _p in 0..args.procs[group] {
@@ -262,16 +397,38 @@ fn main() -> anyhow::Result<()> {
         //write startup file
         hostsalive_recv.recv()?;
         let hosts = hostports.lock().unwrap();
-        write_startup_file(&*hosts)?;
 
-        Command::new(args.gdb)
-            .arg("-x")
-            .arg(".startup.gdb")
-            .args(args.dbg_args)
-            .stdin(Stdio::inherit())
-            .stdout(Stdio::inherit())
-            .stderr(Stdio::inherit())
-            .exec();
+        match args.frontend {
+            DebugFrontend::VSCode => {
+                let vscode_config = VscodeLaunchJson::new(&args, &*hosts);
+                match std::fs::create_dir(".vscode") {
+                    Ok(_) => {Ok(())},
+                    Err(err) if err.kind() == std::io::ErrorKind::AlreadyExists =>  {
+                        Ok(())
+                    },
+                    r => r
+                }?;
+                let launch_json = std::fs::File::options()
+                    .write(true)
+                    .truncate(true)
+                    .create(true)
+                    .open(".vscode/launch.json")?;
+                serde_json::to_writer(launch_json, &vscode_config)?;
+                eprintln!("wrote launch.json to {}", std::path::Path::new(".vscode/launch.json").canonicalize()?.display())
+            }
+
+            DebugFrontend::GDB => {
+                write_startup_file(&*hosts)?;
+                Command::new(args.gdb)
+                    .arg("-x")
+                    .arg(".startup.gdb")
+                    .args(args.dbg_args)
+                    .stdin(Stdio::inherit())
+                    .stdout(Stdio::inherit())
+                    .stderr(Stdio::inherit())
+                    .exec();
+            }
+        }
     }
 
     Ok(())
