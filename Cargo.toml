@@ -1,6 +1,6 @@
 [package]
 name = "mpigdb"
-version = "0.5.0"
+version = "0.5.1"
 edition = "2021"
 description = "A wrapper arround mpiexec, gdbserver, and gdb that makes debugging MPI programs eaiser"
 authors = ["Robert Underwood <rr.underwood94@gmail.com>"]
@@ -16,3 +16,4 @@ hostname = "0.3.1"
 num_cpus = "1.14.0"
 serde = { version = "1.0.162", features = ["derive"] }
 serde_json = "1.0.96"
+which = "6.0.2"

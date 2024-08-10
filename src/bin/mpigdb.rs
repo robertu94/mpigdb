@@ -388,6 +388,16 @@ fn main() -> anyhow::Result<()> {
             hostsalive_send.send(true).unwrap();
         });
 
+        //check if gdb and gdb server exist to report errors
+        if which::which(&args.gdbserver).is_err() {
+            eprintln!("could not find gdbserver \"{0}\" on PATH, please install gdbserver", args.gdbserver);
+            std::process::exit(1);
+        }
+        if which::which(&args.gdb).is_err() {
+            eprintln!("could not find gdb \"{0}\" on PATH, please install gdb", args.gdb);
+            std::process::exit(1);
+        }
+
         controllistening_recv.recv()?;
         Command::new("mpiexec")
             .args(mpiexec_args)
