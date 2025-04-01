@@ -52,7 +52,7 @@ The flags `--interpreter=mi` and `--tty=` are forwarded to GDB hopefully enable 
 
 launch heatdist with 8 processes.
 
-`mpigdb -np 8 --mpigdb_dbg_flag -x --mpigdb_dbg_flag /tmp/debug.dbg -- ./play/build/heatdist`
+`mpigdb -np 8 --mpigdb_dbg_arg -x --mpigdb_dbg_arg /tmp/debug.dbg -- ./play/build/heatdist`
 
 launch heat dist with 8 processes using the script /tmp/debug.dbg
 
