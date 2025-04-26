@@ -1,0 +1,5 @@
+broadcast start
+b __asan::ReportGenericError
+c
+quit
+quit
