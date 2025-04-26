@@ -9,7 +9,7 @@
 namespace stdx = std::experimental;
 namespace stdc = std::chrono;
 constexpr size_t N = 1024;
-constexpr size_t T = 1024 * 30;
+constexpr size_t T = 1024 / 16;
 using mds = stdx::mdspan<float, stdx::extents<size_t, N, N>>;
 
 void init(int start, int stop, mds s) {
@@ -71,16 +71,19 @@ int main(int argc, char *argv[]) {
     diffuse(start, stop, current, prev);
     exchange(start, stop, current);
     std::swap(current, prev);
+    if (rank == 0 && i % 32 == 0) {
+      std::cout << "step " << i << " of " << T << std::endl;
+    }
   }
   double s = 0;
   size_t M = 0;
   for (size_t i = 0; i < N; ++i) {
-    for (int j = 0; j <= N; ++j) {
+    for (int j = 0; j < N; ++j) {
       s += current(i, j);
       ++M;
     }
   }
-  std::cout << s / M << std::endl;
+  // std::cout << s / M << std::endl;
 
   MPI_Barrier(MPI_COMM_WORLD);
   auto stopt = stdc::high_resolution_clock::now();
@@ -90,6 +93,12 @@ int main(int argc, char *argv[]) {
                      stopt - startt)
                      .count()
               << std::endl;
+  }
+
+  float val = current(N - 1, N);
+
+  if (rank == 0) {
+    std::cout << "val" << val << std::endl;
   }
 
   MPI_Finalize();
