@@ -32,7 +32,7 @@ echo "finished $file"
 mdb launch -n $NPROC -b gdb -t ./build-asan/heatdist > /dev/null 2>&1 &
 sleep ${nsecs}
 file="mdb-asan-${NPROC}.out"
-mdb attach -h 127.0.1.1 -p 2000 -x debug-scripts/asan.mdb > $file 2>&1
+mdb attach -x debug-scripts/asan.mdb > $file 2>&1
 echo "finished $file"
 
 echo "sleeping ${nsecs}s..."
