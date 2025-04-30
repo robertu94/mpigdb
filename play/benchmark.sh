@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
+source ~/comp-env.sh
+
 NPROC=$1
-MPIGDB="../target/release/mpigdb"
 nsecs=5
 
 if [[ -z "$NPROC" ]]; then
@@ -11,22 +12,22 @@ fi
 
 file="release-${NPROC}.out"
 
-mpirun -n $NPROC /usr/bin/time ./build/heatdist > $file 2>&1
+mpirun -n $NPROC ./build/heatdist > $file 2>&1
 echo "finished $file"
 
 file="asan-${NPROC}.out"
 
-mpirun -n $NPROC /usr/bin/time ./build-asan/heatdist > $file 2>&1
+mpirun -n $NPROC ./build-asan/heatdist > $file 2>&1
 echo "finished $file"
 
 file="valgrind-${NPROC}.out"
 
-mpirun -n $NPROC /usr/bin/time valgrind ./build/heatdist > $file 2>&1
+mpirun -n $NPROC valgrind ./build/heatdist > $file 2>&1
 echo "finished $file"
 
 file="mpigdb-asan-${NPROC}.out"
 
-$MPIGDB --mpigdb_dbg_arg -x --mpigdb_dbg_arg debug-scripts/mpigdb-script.sh -np $NPROC -- ./build-asan/heatdist > $file 2>&1
+mpigdb --mpigdb_dbg_arg -x --mpigdb_dbg_arg debug-scripts/mpigdb-script.sh -np $NPROC -- ./build-asan/heatdist > $file 2>&1
 echo "finished $file"
 
 mdb launch -n $NPROC -b gdb -t ./build-asan/heatdist > /dev/null 2>&1 &
