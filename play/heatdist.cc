@@ -8,7 +8,7 @@
 
 namespace stdx = std::experimental;
 namespace stdc = std::chrono;
-constexpr size_t N = 1024 * 16;
+constexpr size_t N = 1024 * 8;
 constexpr size_t T = 1024 / 16;
 using mds = stdx::mdspan<float, stdx::extents<size_t, N, N>>;
 
