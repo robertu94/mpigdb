@@ -1,7 +1,0 @@
-command b heatdist.cc:90
-command 0 del
-broadcast start
-b __sanitizer::Die
-c
-quit
-quit
