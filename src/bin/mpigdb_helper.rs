@@ -23,7 +23,7 @@ pub fn main() -> Result<(), anyhow::Error> {
     if verbose {
         eprintln!("child {:?}", child_args);
     }
-    Command::new(gdbserver_path)
+    let err = Command::new(gdbserver_path)
         .arg("--once")
         .arg(format!("{host}:{port}"))
         .args(child_args)
@@ -31,6 +31,6 @@ pub fn main() -> Result<(), anyhow::Error> {
         .stdout(Stdio::inherit())
         .stderr(Stdio::inherit())
         .exec();
-
-    Ok(())
+    eprintln!("{:}", err); 
+    Err(err.into())
 }

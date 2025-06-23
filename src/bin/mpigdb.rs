@@ -399,7 +399,7 @@ fn main() -> anyhow::Result<()> {
         }
 
         controllistening_recv.recv()?;
-        Command::new("mpiexec")
+        let mut comm = Command::new("mpiexec")
             .args(mpiexec_args)
             .stdin(Stdio::null())
             .spawn()?;
@@ -429,7 +429,7 @@ fn main() -> anyhow::Result<()> {
 
             DebugFrontend::GDB => {
                 write_startup_file(&*hosts)?;
-                Command::new(args.gdb)
+                let err = Command::new(args.gdb)
                     .arg("-x")
                     .arg(".startup.gdb")
                     .args(args.dbg_args)
@@ -437,6 +437,8 @@ fn main() -> anyhow::Result<()> {
                     .stdout(Stdio::inherit())
                     .stderr(Stdio::inherit())
                     .exec();
+                eprintln!("{:}", err);
+                comm.kill()?;
             }
         }
     }
