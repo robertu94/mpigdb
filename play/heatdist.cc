@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
     double s = 0;
     size_t M = 0;
     for (size_t i = 0; i < N; ++i) {
-        for (int j = 0; j <= N; ++j) {
+        for (int j = 0; j < N; ++j) {
             s += current(i,j);
             ++M;
         }
@@ -86,6 +86,12 @@ int main(int argc, char *argv[])
     auto stopt = stdc::high_resolution_clock::now();
     if(rank ==0) {
     std::cout << "time: " << stdc::duration_cast<stdc::duration<double, std::ratio<1>>>(stopt-startt).count() << std::endl;
+    }
+
+    float val = current(N - 1, N);
+
+    if (rank == 0) {
+        std::cout << "val" << val << std::endl;
     }
 
     MPI_Finalize();
