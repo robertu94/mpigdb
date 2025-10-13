@@ -69,7 +69,11 @@ Dependencies:
 + python 3.8 or later
 + Rust+Cargo 1.65 or later
 
-Earlier versions may work, but are not tested
+Earlier versions may work, but are not tested.
+
+To build run `cargo build`, this will place the installed binaries in `$repo/target/debug/mpigdb` by default.  See [the cargo documentation](https://doc.rust-lang.org/cargo/commands/cargo-build.html) for more help.
+
+To install to your path run `cargo install --path .`
 
 ## Limitations and Known Bugs
 
